@@ -39,7 +39,7 @@ public class BitcoinServiceClient {
       * @return The current Bitcoin price in the specified currency
       * @throws IOException If an I/O error occurs or API returns invalid data
       */
-     @Tool(name = "Get Bitcoin price by currency")
+     @Tool(name = "get_bitcoin_price_per_currency", description = "Get the current price of BitCoin in the currency passed in as parameter")
      public double getBitcoinPriceByCurrency(String currency) throws IOException {
           String endpoint = "/simple/price";
           String queryParams = "?ids=bitcoin&vs_currencies=" + currency.toLowerCase();
@@ -61,7 +61,7 @@ public class BitcoinServiceClient {
       * @return Map with dates as keys and price information as values
       * @throws IOException If an I/O error occurs or API returns invalid data
       */
-     @Tool(name = "Get BitCoin price for the last n number of days")
+     @Tool(name = "get_bitcoin_price_for_n_days_in_currency", description = "Get the price of BitCoin for the last n number of days and currency")
      public Map<LocalDate, Map<String, Double>> getHistoricalBitcoinPrice(int days, String currency) throws IOException {
           // Use CoinGecko's market chart endpoint which gives historical data by days
           String endpoint = "/coins/bitcoin/market_chart";
