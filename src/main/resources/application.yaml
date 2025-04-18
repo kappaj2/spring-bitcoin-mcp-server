@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: bitconmcp
+  ai:
+    mcp:
+      server:
+        name: bitcoin-mcp-server
+        version: 1.0.0
+        stdio: true
+  main:
+    web-application-type: none
+    banner-mode: off
+
+logging:
+  pattern:
+    console:
+  file:
+    name: ./logs/bitcoin-mcp-server.log

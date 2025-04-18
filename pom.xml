@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>za.sk</groupId>
-	<artifactId>bitconmcp</artifactId>
+	<artifactId>bitcoinmcp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bitconmcp</name>
+	<name>bitcoinmcp</name>
 	<description>Bitcoin MCP Server</description>
 	<properties>
 		<java.version>21</java.version>
@@ -25,6 +25,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -53,6 +57,16 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.2</version> <!-- or newer -->
+				<configuration>
+					<argLine>
+						-javaagent:"${settings.localRepository}/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar"
+					</argLine>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
