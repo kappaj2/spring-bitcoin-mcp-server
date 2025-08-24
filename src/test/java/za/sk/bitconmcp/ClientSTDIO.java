@@ -36,7 +36,7 @@ public class ClientSTDIO {
           McpSchema.ListToolsResult toolList = client.listTools();
           System.out.println("Tools: "+toolList);
 
-          McpSchema.CallToolResult result = client.callTool(new McpSchema.CallToolRequest("Get Bitcoin price by currency", Map.of("currency", "USD")));
+          McpSchema.CallToolResult result = client.callTool(new McpSchema.CallToolRequest("get_bitcoin_price_per_currency", Map.of("currency", "USD")));
 
           System.out.println("Bitcoin price: "+result);
           client.closeGracefully();
